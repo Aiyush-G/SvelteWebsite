@@ -1,4 +1,6 @@
 <script>
+    import Nested from "./Nested.svelte"
+
     let count = 0;
     let numbers = [1,2,3,4,5,6];
 
@@ -41,3 +43,5 @@
 <p>Count Doubled is {doubled}</p>
 
 <button on:click={addNumber}>Add a Number!!</button>
+
+<Nested answer={"3"} />
