@@ -1,0 +1,25 @@
+Download XCODE developer tools for MacOS
+Install Node
+Install NPM
+Learn how to use the terminal 
+Start a SVELTE project via CLI
+
+- I attmpted to donwload NODE via CLI, couldn't get it to work.... then attempted using a pre-built package manager
+- node -v works WOOOP
+- took ages to figure out how to access the repo remotely via terminal
+
+NOTES;
+```
+# installs nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# download and install Node.js (you may need to restart the terminal)
+nvm install 20
+# verifies the right Node.js version is in the environment
+node -v # should print `v20.15.0`
+# verifies the right NPM version is in the environment
+npm -v # should print `10.7.0`
+```
+
+```
+npm create svelte@latest myapp
+```
