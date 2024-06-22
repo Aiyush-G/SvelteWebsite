@@ -5,6 +5,7 @@
     let numbers = [1,2,3,4,5,6];
     let colours = ["red", "green", "blue"]
     let currentColour = colours[0]
+    let m={x:0, y:0}
 
 
     $: doubled = count*2;
@@ -38,6 +39,15 @@
      */
     function updateColour(colour){
         currentColour = colour
+    }
+
+   
+    /**
+     * @param {{ clientX: number; clientY: number; }} event
+     */
+    function handleMove(event){
+        m.x = event.clientX;
+        m.y = event.clientY
     }
 
 </script>
@@ -75,6 +85,20 @@
     ></button>
 {/each}
 
+<div on:pointermove={handleMove}>
+    The pointer is at {m.x} x {m.y}
+</div>
 
+<div
+on:pointermove={(e)=> {
+    m.x = e.clientX;
+    m.y = e.clientY
+}}
+> The pointer is at {m.x} x {m.y}</div>
 
+<button
+on:click|once={()=>alert("waaaa")}
+>
+    This DIV contains so info that, when you click, will display a message once and once only...
+</button>
 <!-- on:click={()=> currentColour = colour} -->

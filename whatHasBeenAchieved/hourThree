@@ -1,0 +1,6 @@
+In this hour, I focus on learning about user events
+Ie. mouse over / mouse position
+
+I try and experiment with different methods of using handlers ie. inline handlers etc... I discover the use of the arrow function; quite the nifty tool.
+
+I add a little label under-neath my current experiemnts where I tell the user what their current mouse position is. I might try and incorporate this as a feature later on, but at the moment I really just wanted to discover and understand how this worked.
