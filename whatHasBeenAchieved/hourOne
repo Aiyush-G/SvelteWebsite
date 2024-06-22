@@ -19,6 +19,8 @@ npm install
 npm run dev
 ```
 
+Now read thorugh the documentation and adding some cool features!!! Ie. reactive buttons, counters, error messages etc...
+
 NOTES;
 ```
 # installs nvm (Node Version Manager)
