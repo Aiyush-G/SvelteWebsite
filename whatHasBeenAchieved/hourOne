@@ -11,6 +11,13 @@ Start a SVELTE project via CLI
 - installed GIT locally - `brew install git`
 - had to first install BREW - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
+- managed to finally create a skeleton project:
+```
+npm create svelte@latest myapp
+cd myapp
+npm install
+npm run dev
+```
 
 NOTES;
 ```
