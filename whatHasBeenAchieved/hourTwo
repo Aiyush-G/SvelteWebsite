@@ -1,11 +1,21 @@
 Not documented EVERYTHING here, just notes for me to look back on. 
 Trying to understand how array prototype methods work in JS
+Learnt and implemented some nested components
+Implementing some "LOGIC" components
+- Updated the counter with some messages that change over time :)
+- adding some reactive buttons so that the text colour changes
 
 # Notes
 
-issue with arrays identified as how SVELTE deals with REACTIVITY
+- issue with arrays identified as how SVELTE deals with REACTIVITY
 
-spread operator is ...
+- spread operator is ...
+
+- When using props gotta use export keyword for nested components
+
+
+
+- UNDERSTAND PROTOTYPES OF ARRAY
 
 1. You have an initial array:
    ```javascript
