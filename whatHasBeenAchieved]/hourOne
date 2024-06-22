@@ -7,6 +7,10 @@ Start a SVELTE project via CLI
 - I attmpted to donwload NODE via CLI, couldn't get it to work.... then attempted using a pre-built package manager
 - node -v works WOOOP
 - took ages to figure out how to access the repo remotely via terminal
+- realised cannot use physical file system via remote repo
+- installed GIT locally - `brew install git`
+- had to first install BREW - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
 
 NOTES;
 ```
