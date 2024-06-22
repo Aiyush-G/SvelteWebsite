@@ -54,6 +54,13 @@
         m.y = event.clientY
     }
 
+    
+	let numFavouriteColours = 1;
+	
+	let colourOptions = ["green", "blue"];
+
+	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+
 </script>
 
 <h1>Learning Svelte with {name}</h1>
@@ -120,3 +127,47 @@ on:click|once={()=>alert("waaaa")}
 </label>
 
 <p>{a} + {b} = {a + b}</p>
+
+
+
+
+<h2>Number of Favourite Colours</h2>
+
+{#each [1, 2, 3] as number}
+	<label>
+		<input
+			type="radio"
+			name="numFavouriteColours"
+			value={number}
+			bind:group={numFavouriteColours}
+		/>
+
+		{number} {number === 1 ? 'favourite colour' : 'favourite colours'}
+	</label>
+{/each}
+
+<h2>Colours</h2>
+
+{#each ['GREEN', 'BLUE', 'RED'] as flavour}
+	<label>
+		<input
+			type="checkbox"
+			name="colourOptions"
+			value={flavour}
+			bind:group={colourOptions}
+		/>
+
+		{flavour}
+	</label>
+{/each}
+
+{#if colourOptions.length === 0}
+	<p>Please select at least one colour</p>
+{:else if colourOptions.length > numFavouriteColours}
+	<p>Can't have more colours optiosn than number of colours you have favourited!</p>
+{:else}
+	<p>
+		You have {numFavouriteColours} {numFavouriteColours === 1 ? 'as a favourite colour' : 'as your favourite colours'}
+		of {formatter.format(colourOptions)}
+	</p>
+{/if}

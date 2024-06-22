@@ -9,3 +9,70 @@ Learnt about events like hovering and clicking and delved deep into understandin
 
 - NOTE to self: event bubbling doesn't happen automatically within components...
 
+COPIED NOTE ABOUT FORMATTERS
+The code `const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });` is used to create a new instance of `Intl.ListFormat`, which is an internationalization API in JavaScript for formatting lists of items according to the locale's conventions.
+
+
+- **`Intl.ListFormat`**: A constructor for objects that enable language-sensitive list formatting.
+- **`'en'`**: This is the locale identifier for English. The formatter will use English conventions to format the list.
+- **`{ style: 'long', type: 'conjunction' }`**: This is an options object that configures the formatter's behavior.
+
+### Options Object Properties
+
+- **`style`**: Determines the length of the formatted list.
+  - **`'long'`**: Produces a longer, more descriptive format. For example, "one, two, and three".
+  - Other possible values are `'short'` (e.g., "one, two, & three") and `'narrow'` (e.g., "one, two, three").
+
+- **`type`**: Specifies the type of list.
+  - **`'conjunction'`**: Formats the list with conjunctions like "and" or "or". For example, "one, two, and three".
+  - Other possible values are `'disjunction'` (e.g., "one, two, or three") and `'unit'` (used for unit measurements).
+
+### Example Usage
+
+Here’s an example to demonstrate how this formatter works:
+
+```javascript
+const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+
+const items = ['apples', 'bananas', 'cherries'];
+
+console.log(formatter.format(items));  // Output: "apples, bananas, and cherries"
+```
+
+### Explanation
+
+- **Locale (`'en'`)**: Specifies that the list should be formatted according to English conventions.
+- **`style: 'long'`**: The list items are separated by commas and the final item is preceded by "and".
+- **`type: 'conjunction'`**: Uses a conjunction to combine the list items.
+
+### Benefits
+
+- **Internationalization**: Automatically handles locale-specific formatting, which is useful for creating applications that support multiple languages.
+- **Consistency**: Ensures lists are formatted consistently according to the specified locale's rules.
+- **Ease of Use**: Simplifies the task of formatting lists by providing a straightforward API.
+
+### Alternative Options
+
+#### Different Styles
+
+- **Short Style**
+  ```javascript
+  const shortFormatter = new Intl.ListFormat('en', { style: 'short', type: 'conjunction' });
+  console.log(shortFormatter.format(items));  // Output: "apples, bananas, & cherries"
+  ```
+
+- **Narrow Style**
+  ```javascript
+  const narrowFormatter = new Intl.ListFormat('en', { style: 'narrow', type: 'conjunction' });
+  console.log(narrowFormatter.format(items));  // Output: "apples, bananas, cherries"
+  ```
+
+#### Different Types
+
+- **Disjunction (using "or")**
+  ```javascript
+  const disjunctionFormatter = new Intl.ListFormat('en', { style: 'long', type: 'disjunction' });
+  console.log(disjunctionFormatter.format(items));  // Output: "apples, bananas, or cherries"
+  ```
+
+By using `Intl.ListFormat`, you can create more readable and culturally appropriate list formatting for users in different locales, improving the user experience in multi-language applications.
