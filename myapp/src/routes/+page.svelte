@@ -1,6 +1,17 @@
 <script>
     import Nested from "./Nested.svelte"
 
+    import { count1 } from './stores.js';
+	import Incrementer from './getBigger.svelte';
+	import Decrementer from './getSmaller.svelte';
+	import Resetter from './reset.svelte';
+
+	let count_value = 0 ;
+
+	count1.subscribe((value) => {
+		count_value = value;
+	});
+
     let count = 0;
     let numbers = [1,2,3,4,5,6];
     let colours = ["red", "green", "blue"]
@@ -121,6 +132,12 @@ on:click|once={()=>alert("waaaa")}
 	<input type="range" bind:value={a} min="0" max="10" />
 </label>
 
+<h1>The count is {count_value}</h1>
+
+<Incrementer />
+<Decrementer />
+<Resetter />
+
 <label>
 	<input type="number" bind:value={b} min="0" max="10" />
 	<input type="range" bind:value={b} min="0" max="10" />
@@ -171,3 +188,9 @@ on:click|once={()=>alert("waaaa")}
 		of {formatter.format(colourOptions)}
 	</p>
 {/if}
+
+<h1>The count is {count_value}</h1>
+
+<Incrementer />
+<Decrementer />
+<Resetter />
