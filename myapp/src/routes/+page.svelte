@@ -6,6 +6,10 @@
     let colours = ["red", "green", "blue"]
     let currentColour = colours[0]
     let m={x:0, y:0}
+    let name = "Bob"
+
+    let a = 1;
+    let b = 2;
 
 
     $: doubled = count*2;
@@ -52,7 +56,8 @@
 
 </script>
 
-<h1>Learning Svelte!</h1>
+<h1>Learning Svelte with {name}</h1>
+<input type="text" bind:value={name}>
 
 <button on:click={increment}>
     Clicked {count}
@@ -102,3 +107,16 @@ on:click|once={()=>alert("waaaa")}
     This DIV contains so info that, when you click, will display a message once and once only...
 </button>
 <!-- on:click={()=> currentColour = colour} -->
+
+
+<label>
+	<input type="number" bind:value={a} min="0" max="10" />
+	<input type="range" bind:value={a} min="0" max="10" />
+</label>
+
+<label>
+	<input type="number" bind:value={b} min="0" max="10" />
+	<input type="range" bind:value={b} min="0" max="10" />
+</label>
+
+<p>{a} + {b} = {a + b}</p>
