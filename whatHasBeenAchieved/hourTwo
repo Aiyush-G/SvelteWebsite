@@ -1,0 +1,45 @@
+Not documented EVERYTHING here, just notes for me to look back on. 
+Trying to understand how array prototype methods work in JS
+
+# Notes
+
+issue with arrays identified as how SVELTE deals with REACTIVITY
+
+spread operator is ...
+
+1. You have an initial array:
+   ```javascript
+   let numbers = [1, 2, 3, 4, 5, 6];
+   ```
+
+2. You then use the `push` method to add a new element to the array:
+   ```javascript
+   numbers.push(numbers.length + 1);
+   ```
+
+Here's what happens in detail:
+
+- `numbers.length` returns the current length of the array, which is 6.
+- You add 1 to this length, resulting in 7.
+- `push` then adds this new element (7) to the end of the array.
+
+After this operation, the array should be:
+```javascript
+[1, 2, 3, 4, 5, 6, 7]
+```
+
+However, if you see an empty item and a skipped number, it might be due to a different issue or a misunderstanding of the initial state of the array. Here are a few things to check:
+
+1. **Initial State of the Array**: Ensure the initial array is indeed `[1, 2, 3, 4, 5, 6]`.
+2. **Other Operations**: Verify that there are no other operations modifying the array between the initialization and the `push` call.
+3. **Output/Logging**: Print the array before and after the `push` operation to see the exact changes.
+
+Here’s an example to illustrate the correct behavior:
+
+```javascript
+let numbers = [1, 2, 3, 4, 5, 6];
+console.log(numbers);  // Output: [1, 2, 3, 4, 5, 6]
+numbers.push(numbers.length + 1);
+console.log(numbers);  // Output: [1, 2, 3, 4, 5, 6, 7]
+```
+

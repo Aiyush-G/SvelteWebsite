@@ -21,7 +21,10 @@
     }
 
     function addNumber(){
-        numbers = [...numbers, numbers.length + 1];
+        //numbers.push(numbers.length + 1);
+        //numbers = numbers;
+
+        numbers = [...numbers, numbers.length + 1]
         
     }
 </script>
